@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff"><title>Покер · 3 раунда</title><link rel="stylesheet" href="style.css"><script src="model.js" defer></script><script src="app.js" defer></script></head>
+<body><main>
+<header><h1>Покер · 3 раунда</h1><span id="saved" role="status">Автосохранение</span></header>
+<section aria-labelledby="ranking-title"><h2 id="ranking-title">Общий рейтинг</h2><p id="progress"></p><table class="ranking"><thead><tr><th>№</th><th>Игрок</th><th>Р1</th><th>Р2</th><th>Р3</th><th>Итого</th></tr></thead><tbody id="ranking"></tbody></table><p class="hint">Равные очки → победы → KO. Полное равенство — дополнительная игра.</p></section>
+<section aria-label="Результаты раундов"><nav aria-label="Раунд"><button data-round="0">Раунд 1</button><button data-round="1">Раунд 2</button><button data-round="2">Раунд 3</button></nav>
+<p class="hint">Введите фишки на финише. При вылете нажмите «Вылетел»; KO можно делить: 0,5 или 0,333333.</p>
+<div id="round-status" role="status"></div><div id="players"></div>
+</section>
+<details><summary>Имена игроков</summary><div id="names"></div></details>
+<details><summary>Как считаются очки</summary><p>Места 1–8: <strong>12 / 9 / 7 / 5 / 3 / 2 / 1 / 0</strong> очков. Каждый KO добавляет 1 очко. При равных стеках делятся очки занятых мест. Все участники делённого первого места получают победу, как в Excel.</p><p>Первый выбывший занимает 8-е место, следующий — 7-е. Меняйте номер вылета, чтобы исправить порядок: остальные номера сдвинутся автоматически.</p><p>Раунд включается в рейтинг, когда указаны все результаты, сумма фишек равна 80 000 и сумма KO соответствует числу вылетов. При исправлении данные других раундов сохраняются.</p></details>
+<footer><button id="export">Экспорт JSON</button><button id="import">Импорт JSON</button><input id="file" type="file" accept=".json,application/json" hidden><p class="hint">Сохранено только в этом браузере. Для переноса на другое устройство используйте JSON.</p><p id="message" role="alert"></p></footer>
+</main></body></html>
